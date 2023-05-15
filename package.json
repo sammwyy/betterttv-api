@@ -1,7 +1,7 @@
 {
   "name": "betterttv",
   "description": "Unofficial BetterTTV API Wrapper.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "files": [
@@ -11,7 +11,8 @@
   "license": "MIT",
   "author": "sammwy",
   "scripts": {
-    "build": "tsc",
+    "clean": "rimraf ./lib",
+    "build": "yarn clean && tsc",
     "format": "prettier --write \"src/**/*.(js|ts)\"",
     "lint": "eslint src --ext .js,.ts",
     "lint:fix": "eslint src --fix --ext .js,.ts",
@@ -23,7 +24,8 @@
     "postversion": "git push && git push --tags"
   },
   "dependencies": {
-    "isomorphic-unfetch": "^3.1.0"
+    "isomorphic-unfetch": "^3.1.0",
+    "rimraf": "^5.0.0"
   },
   "devDependencies": {
     "@types/jest": "29.2.4",
